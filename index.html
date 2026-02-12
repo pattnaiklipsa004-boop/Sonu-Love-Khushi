@@ -2,158 +2,203 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>For My Love ❤️</title>
+<title>My Love 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
-  body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-    text-align: center;
-    color: #333;
-  }
-  header {
-    padding: 30px;
-    color: white;
-    background: #ff4d6d;
-  }
-  h1, h2 { margin: 10px 0; }
-  section { padding: 30px 15px; }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #ffd6e8, #fff0f5);
+  overflow-x: hidden;
+}
 
-  .card {
-    background: white;
-    margin: 15px auto;
-    max-width: 900px;
-    padding: 20px;
-    border-radius: 2015px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  }
+h1, h2 {
+  color: #ff2f7d;
+}
 
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 10px;
-  }
-  .gallery img {
-    width: 100%;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: transform 0.3s;
-  }
-  .gallery img:hover { transform: scale(1.05); }
+.container {
+  padding: 20px;
+}
 
-  button {
-    padding: 12px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 20px;
-    background: #ff4d6d;
-    color: white;
-    cursor: pointer;
-    margin: 10px;
-  }
-  button:hover { background: #e63b5a; }
+/* Gallery */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
 
-  .secret { display: none; font-size: 18px; color: #e6004c; margin-top: 15px; }
+.memory-photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(255,105,180,0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
 
-  .balloon {
-    font-size: 40px;
-    animation: float 4s ease-in-out infinite;
-    display: inline-block;
-    margin: 0 10px;
-  }
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-  }
+.memory-photo:hover {
+  transform: scale(1.1) rotate(2deg);
+  box-shadow: 0 0 20px rgba(255,20,147,0.8);
+}
+
+/* Buttons */
+button {
+  background: #ff2f7d;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 20px 0;
+  box-shadow: 0 5px 15px rgba(255,47,125,0.4);
+}
+
+button:hover {
+  background: #ff5fa2;
+}
+
+/* Secret */
+.hidden { display: none; }
+
+.secret {
+  background: #fff;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 600px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px pink;
+  animation: pop 0.5s ease;
+}
+
+@keyframes pop {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Floating emoji animation */
+@keyframes floatUp {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(-120px); opacity: 0; }
+}
 </style>
 </head>
+
 <body>
 
-<header>
-  <h1>❤️ Happy Valentine My Love ❤️</h1>
-  <p>This website is only for you 😘</p>
-</header>
+<div class="container">
+  <h1>💖 My Baby, My Life 💖</h1>
+  <p>For you, my Sonu ❤️</p>
 
-<!-- Background Music -->
-<audio autoplay loop>
-  <!-- Yahan apna song ka file naam dalo, jaise: love.mp3 -->
-  <source src="love.mp3" type="audio/mpeg">
-</audio>
+  <!-- Music -->
+  <audio id="bgMusic" loop>
+    <source src="Jis_Pe_Rakhe_Tum_Ne_Qadam.mp3" type="audio/mpeg">
+  </audio>
 
-<section class="card">
-  <h2>💌 My Long Message For You</h2>
-  <p>
-    My love, <br><br>
-    Yahan apna **lamba message** likho… jo dil me hai sab likh do.  
-    Tum meri zindagi ho, meri smile ho, meri har khushi ka reason ho...  
-    (Is paragraph ko apne words me change kar dena ❤️)
-  </p>
-</section>
+  <p>🎵 Tap anywhere to play music 🎵</p>
 
-<section class="card">
-  <h2>📸 Our Memories (10 Photos)</h2>
-  <div class="gallery">
-    <img src="1.jpg">
-    <img src="2.jpg">
-    <img src="3.jpg">
-    <img src="4.jpg">
-    <img src="5.jpg">
-    <img src="6.jpg">
-    <img src="7.jpg">
-    <img src="8.jpg">
-    <img src="9.jpg">
-    <img src="10.jpg">
-  </div>
-  <p>👉 In sab ki jagah apni photos upload kar dena</p>
-</section>
-
-<section class="card">
+  <!-- Why I Love You -->
   <h2>❤️ Why I Love You (5 Reasons)</h2>
-  <ol>
-    <li>Because you always make me smile 😊</li>
-    <li>Because you care for me like no one else 🫶</li>
-    <li>Because you understand me 🥺</li>
-    <li>Because you are my safe place 🏡</li>
-    <li>Because I can’t imagine my life without you 💖</li>
-  </ol>
-</section>
+  <p>1. Because you always make me smile 😊</p>
+  <p>2. Because you care for me like no one else 🫶</p>
+  <p>3. Because you understand me 🥺</p>
+  <p>4. Because you are my safe place 🤗</p>
+  <p>5. Because I can’t imagine my life without you 💕</p>
 
-<section class="card">
-  <h2>🎈 Our Cute Moments</h2>
+  <!-- Our Cute Moments -->
+  <h2>📸 Our Cute Moments</h2>
   <p>
-    Remember our first meet, our long talks, our hugs 🤗, our kisses 💋,  
-    our silly fights and cute patch-ups… Every moment with you is special ❤️
+    We haven’t met yet, but still… every video call, every late night talk,  
+    every smile on screen feels magical.  
+    Distance never stopped us from falling more and more in love ❤️  
+    One day, we’ll turn these calls into real hugs and these smiles into forever memories.
   </p>
-  <div>
-    <span class="balloon">🎈</span>
-    <span class="balloon">❤️</span>
-    <span class="balloon">💋</span>
-    <span class="balloon">🤗</span>
-    <span class="balloon">🎈</span>
-  </div>
-</section>
 
-<section class="card">
-  <h2>🔒 Secret Message</h2>
-  <button onclick="showSecret()">Click to see secret</button>
-  <div class="secret" id="secretMsg">
-    You are mine, forever and always ❤️ I love you more than words can say 😘
-  </div>
-</section>
+  <!-- Gallery -->
+  <h2>🖼️ Our Memories (10 Photos)</h2>
+  <div id="gallery" class="gallery"></div>
 
-<section class="card">
-  <h2>🥚 Easter Egg</h2>
-  <p>Hint: Double click anywhere on this page 😏</p>
-</section>
+  <!-- Secret Button -->
+  <button onclick="toggleSecret()">💖 Tap for Secret Message 💖</button>
+
+  <!-- Secret Message -->
+  <div id="secret" class="secret hidden">
+    <h2>💌 For My Baby, My Life (Sonu) 💌</h2>
+    <p>
+      My love, my baby, my life ❤️<br><br>
+
+      I love you so so so much… words are never enough.  
+      Will you be mine forever? Forever means forever — har din, har raat, har khushi, har dard. 💕<br><br>
+
+      Hum long distance me hain, phir bhi har video call, har late night talk, har smile mere liye duniya se zyada precious hai.  
+      Sonu, app meri safe place ho, meri aadat ho, meri duniya ho. 💖<br><br>
+
+      Main apko baby bhi bulati hoon, my life bhi, kyunki app dono hi ho 😝  
+      Ek din jab hum milenge na, tab ye sab sirf screen pe nahi, real life me hoga… hugs, kisses, silly fights, aur endless pyaar 😘🤗<br><br>
+
+      I love you baby… main apke saath sab kuch karna chahti hoon, sab kuch matlab sab kuch han han wo bhi jo humne rat ko kiya tha wo rel main karna hai right ❤️  
+      Please stay with me, always. Will you be mine forever? 💍
+    </p>
+  </div>
+
+</div>
 
 <script>
-  function showSecret() {
-    document.getElementById("secretMsg").style.display = "block";
-  }
+// Photos list (yahan apne exact file names rakhna)
+const photos = [
+  "WhatsApp Image 2026-02-12 at 19.29.15.jpeg",
+  "WhatsApp Image 2026-02-12 at 19.29.17.jpeg",
+  "WhatsApp Image 2026-02-12 at 19.29.19.jpeg",
+  "WhatsApp Image 2026-02-12 at 19.29.20.jpeg",
+  "WhatsApp Image 2026-02-12 at 19.29.21.jpeg",
+  "WhatsApp Image 2026-02-12 at 19.29.23.jpeg",
+  "WhatsApp Image 2026-02-12 at 19.29.24.jpeg",
+  "WhatsApp Image 2026-02-12 at 19.29.25.jpeg",
+  "WhatsApp Image 2026-02-12 at 19.29.26.jpeg",
+  "WhatsApp Image 2026-02-12 at 19.29.28.jpeg"
+];
 
-  document.body.ondblclick = function() {
-    alert("Surprise! You found the Easter Egg 🥳❤️ I love you!");
-  }
+const gallery = document.getElementById("gallery");
+
+photos.forEach(src => {
+  const img = document.createElement("img");
+  img.src = src;
+  img.className = "memory-photo";
+  gallery.appendChild(img);
+});
+
+// Secret toggle
+function toggleSecret() {
+  document.getElementById("secret").classList.toggle("hidden");
+}
+
+// Play music on first click
+document.body.addEventListener("click", () => {
+  const music = document.getElementById("bgMusic");
+  music.play();
+}, { once: true });
+
+// Click animation (hearts, kisses, hugs, balloons)
+const emojis = ["💖","💋","🤗","🎈","💕","😘"];
+
+document.addEventListener("click", function(e) {
+  const emoji = document.createElement("div");
+  emoji.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+  emoji.style.position = "fixed";
+  emoji.style.left = e.clientX + "px";
+  emoji.style.top = e.clientY + "px";
+  emoji.style.fontSize = "24px";
+  emoji.style.pointerEvents = "none";
+  emoji.style.animation = "floatUp 2s ease forwards";
+  document.body.appendChild(emoji);
+
+  setTimeout(() => emoji.remove(), 2000);
+});
 </script>
 
 </body>
