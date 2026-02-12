@@ -1,167 +1,239 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<title>For My Baby ❤️</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Sonu ❤️</title>
 <style>
 body{
-  margin:0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #ff758c, #ff7eb3);
-  text-align:center;
-  color:#fff;
-  overflow-x:hidden;
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(135deg,#ff758c,#ff7eb3);
+color:white;
+text-align:center;
+overflow-x:hidden;
 }
-h1,h2,h3{ text-shadow:0 2px 10px rgba(0,0,0,.3); }
-.section{ padding:40px 20px; }
+.hidden{display:none;}
+section{padding:60px 20px;}
+h1{font-size:36px;cursor:pointer;}
 button{
-  padding:12px 22px; border:none; border-radius:25px;
-  background:#ff2d55; color:#fff; font-size:16px;
-  cursor:pointer; margin:10px;
-  box-shadow:0 5px 15px rgba(0,0,0,.3);
+padding:12px 25px;
+border:none;
+border-radius:30px;
+background:#ff3e6c;
+color:white;
+font-size:16px;
+cursor:pointer;
+margin:10px;
 }
-button:hover{ transform:scale(1.05); }
-
-#surpriseBar{
-  width:80%; height:20px; background:rgba(255,255,255,.3);
-  margin:20px auto; border-radius:20px; overflow:hidden;
+input{
+padding:10px;
+border-radius:20px;
+border:none;
+text-align:center;
 }
-#surpriseFill{
-  width:0%; height:100%; background:#ff2d55; transition:width .4s;
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:15px;
+max-width:900px;
+margin:auto;
 }
-
 .gallery img{
-  width:140px; height:140px; object-fit:cover; border-radius:15px;
-  margin:8px; box-shadow:0 5px 15px rgba(0,0,0,.3);
+width:100%;
+border-radius:20px;
+cursor:pointer;
+transition:0.3s;
 }
-
-.float{
-  position:fixed; bottom:-40px; font-size:28px;
-  animation: floatUp 4s linear forwards; pointer-events:none;
+.gallery img:hover{transform:scale(1.05);}
+.message-box{
+margin-top:15px;
+font-size:18px;
+min-height:30px;
 }
-@keyframes floatUp{
-  to{ transform:translateY(-110vh); opacity:0; }
+.popup{
+background:rgba(255,255,255,0.2);
+padding:15px;
+border-radius:20px;
+margin-top:15px;
 }
-
-.hidden{ display:none; }
-.love-letter{
-  background:rgba(255,255,255,.15); padding:20px; border-radius:20px;
-  max-width:800px; margin:0 auto; box-shadow:0 5px 20px rgba(0,0,0,.3);
+.flower{
+position:fixed;
+top:-10px;
+font-size:24px;
+animation:fall 5s linear infinite;
+}
+@keyframes fall{
+to{transform:translateY(110vh);}
 }
 </style>
 </head>
 <body>
 
-<!-- 🎵 MUSIC -->
-<audio id="bgMusic" loop>
-  <source src="Jis Pe Rakhe Tum Ne Qadam - Sitaare - Ikkis - Arijit Singh.mp3" type="audio/mpeg">
-</audio>
+<!-- PASSWORD -->
+<section id="lock">
+<h1>Enter Our Love Password 💖</h1>
+<input type="password" id="pass" placeholder="Password">
+<br>
+<button onclick="checkPass()">Unlock</button>
+<p id="wrong"></p>
+</section>
 
-<div class="section">
-  <h1>💖 For My Baby & My Life (Sonu) 💖</h1>
-  <p>Welcome to our surprise love world 😘</p>
+<div id="content" class="hidden">
 
-  <button onclick="playMusic()">▶️ Play Music</button>
-  <button onclick="addSurprise()">🎁 Add Surprise</button>
-
-  <div id="surpriseBar"><div id="surpriseFill"></div></div>
-  <p id="surpriseText">Surprise Meter: 0%</p>
-  <p id="surpriseMsg"></p>
+<!-- HERO -->
+<section>
+<h1>Happy Valentine's Day Sonu ❤️</h1>
+<img src="WhatsApp Image 2026-02-12 at 19.29.15.jpeg" width="200" style="border-radius:20px;">
+<div class="popup">
+Mere baby, mere jann, mere shona, meri cutie, meri sweety… ❤️  
+Aap meri life, meri dhadkan, meri saans ho.  
+Sonu + Khushi = Sonushi 💖  
+Aap ho to sab perfect hai.
 </div>
+</section>
 
-<div class="section">
-  <h2>📸 Our Cute Moments</h2>
-  <p>Abhi mile nahi, but video calls, baatein, laughs… sab special hai mujhe life time apke sath rehna hai jann humesha humesha please jaldi shadi karlo mujhse please baby 💕</p>
-  <div class="gallery">
-    <img src="WhatsApp Image 2026-02-12 at 19.29.15.jpeg">
-    <img src="WhatsApp Image 2026-02-12 at 19.29.17.jpeg">
-    <img src="WhatsApp Image 2026-02-12 at 19.29.19.jpeg">
-    <img src="WhatsApp Image 2026-02-12 at 19.29.20.jpeg">
-    <img src="WhatsApp Image 2026-02-12 at 19.29.21.jpeg">
-    <img src="WhatsApp Image 2026-02-12 at 19.29.23.jpeg">
-    <img src="WhatsApp Image 2026-02-12 at 19.29.24.jpeg">
-    <img src="WhatsApp Image 2026-02-12 at 19.29.25.jpeg">
-    <img src="WhatsApp Image 2026-02-12 at 19.29.26.jpeg">
-  </div>
+<!-- GALLERY -->
+<section>
+<h1>Touch Our Memories 📸</h1>
+<div class="gallery">
+<img src="WhatsApp Image 2026-02-12 at 19.29.15.jpeg" onclick="showMsg(0)">
+<img src="WhatsApp Image 2026-02-12 at 19.29.17.jpeg" onclick="showMsg(1)">
+<img src="WhatsApp Image 2026-02-12 at 19.29.19.jpeg" onclick="showMsg(2)">
+<img src="WhatsApp Image 2026-02-12 at 19.29.20.jpeg" onclick="showMsg(3)">
+<img src="WhatsApp Image 2026-02-12 at 19.29.21.jpeg" onclick="showMsg(4)">
+<img src="WhatsApp Image 2026-02-12 at 19.29.22.jpeg" onclick="showMsg(5)">
+<img src="WhatsApp Image 2026-02-12 at 19.29.23.jpeg" onclick="showMsg(6)">
+<img src="WhatsApp Image 2026-02-12 at 19.29.24.jpeg" onclick="showMsg(7)">
+<img src="WhatsApp Image 2026-02-12 at 19.29.25.jpeg" onclick="showMsg(8)">
+<img src="WhatsApp Image 2026-02-12 at 19.29.26.jpeg" onclick="showMsg(9)">
 </div>
+<div class="message-box" id="photoMsg"></div>
+</section>
 
-<div class="section">
-  <h2>🔐 Secret Love Letter (Easter Egg)</h2>
-  <button onclick="toggleLetter()">Open Secret Message 💌</button>
-  <div id="letter" class="love-letter hidden">
-    <h3>My Baby, My Life, Sonu ❤️</h3>
-    <p>
-      I love you baby… bohot bohot bohot zyada ❤️ Will you be mine forever? HAPPY VALENTINES DAY BABY <br>
-      Suno na, mujhe aapke saath sab kuch karna hai… sab kuch matlab sab kuch han han wo sab bhi jo humari ratt ko adhuri hai wo real wala karna hai bohot pyar karna hai right baby  😉<br><br>
-      Hum long distance me hain, abhi mile nahi… par video calls, late night talks,
-      good morning aur good night messages ne mujhe aapse aur zyada pyaar karna sikha diya ❤️<br><br>
-      Aap mere baby ho, meri life ho, mera sab kuch ho. Sonu, I really really love you 😘
-      Hamesha mere saath rehna… hamesha ❤️
-    </p>
-  </div>
-</div>
+<!-- OPEN WHEN -->
+<section>
+<h1>Open When 💌</h1>
+<button onclick="letter('sad')">You’re Sad</button>
+<button onclick="letter('happy')">You’re Happy</button>
+<button onclick="letter('miss')">You Miss Me</button>
+<button onclick="letter('angry')">You’re Angry</button>
+<button onclick="letter('lonely')">You Feel Lonely</button>
+<div id="letterText" class="popup"></div>
+</section>
 
-<div class="section">
-  <h2>💥 Crazy Surprise Zone</h2>
-  <p>Screen pe click/tap karo — hearts, balloons, kisses aayenge 😜</p>
-  <button onclick="bigSurprise()">💣 BIG SURPRISE</button>
+<!-- WHY I LOVE YOU -->
+<section>
+<h1>Why I Love You 💖</h1>
+<button onclick="reason()">Touch Here</button>
+<div id="reasonBox" class="popup"></div>
+</section>
+
+<!-- FUTURE PLANS -->
+<section>
+<h1 onclick="futureMsg()">Our Future Plans 🌍 (Touch Me)</h1>
+<div id="futureText" class="popup"></div>
+</section>
+
+<!-- LOVE BOOTH -->
+<section>
+<h1>Love Booth 📷</h1>
+<button onclick="startCamera()">Open Camera</button>
+<br>
+<video id="camera" autoplay class="hidden" width="250" style="border-radius:20px;"></video>
+</section>
+
+<!-- VALENTINE -->
+<section>
+<h1>Will You Be My Valentine? 💘</h1>
+<button onclick="yesLove()">YES 💖</button>
+<button onclick="noLove()">NO 😒</button>
+<div id="valentineAns" class="popup"></div>
+</section>
+
 </div>
 
 <script>
-let surprise = 0;
-let musicStarted = false;
-
-function playMusic(){
-  const m = document.getElementById("bgMusic");
-  m.play().then(()=>{ musicStarted = true; }).catch(()=>{});
+function checkPass(){
+let p=document.getElementById("pass").value;
+if(p==="ilovesonu"){
+document.getElementById("lock").style.display="none";
+document.getElementById("content").classList.remove("hidden");
+}else{
+document.getElementById("wrong").innerText="Wrong password 😢";
+}
 }
 
-// First user interaction anywhere → auto start music
-document.addEventListener("click", function(){
-  if(!musicStarted){
-    playMusic();
-  }
-  spawnRandom();
+const msgs=[
+"My baby looks cutest here 😍",
+"This smile = meri sweety ki jaan 💕",
+"Cutie overload in this pic 🥺",
+"Meri shona angel lag rahi hai 😇",
+"Sonu + Khushi = Sonushi forever 💖",
+"Is moment pe fir se pyaar ho gaya 😘",
+"Sweety you are my world ✨",
+"Meri life isi photo me hai 🌍",
+"Baby you are my happiness ☀️",
+"Forever wali cutie pie 🥰"
+];
+
+function showMsg(i){
+document.getElementById("photoMsg").innerText=msgs[i];
+}
+
+function letter(type){
+let text={
+sad:"Baby please smile… main hamesha aapke saath hoon ❤️",
+happy:"Aapki happiness meri sabse badi jeet hai sweety 🥰",
+miss:"Main bhi aapko har second miss karta hoon jann 💭",
+angry:"Gussa kam karo shona… aap cute lagti ho 😚",
+lonely:"Kabhi lonely feel mat karna, aapki saans me main hoon 💖"
+};
+document.getElementById("letterText").innerText=text[type];
+}
+
+function reason(){
+let arr=[
+"I love your smile",
+"I love your caring heart",
+"I love your cute anger",
+"I love your voice",
+"I love being yours forever"
+];
+document.getElementById("reasonBox").innerText=arr[Math.floor(Math.random()*arr.length)];
+}
+
+function futureMsg(){
+document.getElementById("futureText").innerHTML=
+"• Late night ice cream dates 🍦<br>\
+• Long drives with songs 🚗🎶<br>\
+• Matching outfits and cute selfies 📸<br>\
+• Trips around the world together ✈️🌍<br>\
+• One home, one life, forever together 🏡💞<br>\
+• Growing old holding hands 👵👴";
+}
+
+function startCamera(){
+navigator.mediaDevices.getUserMedia({video:true})
+.then(stream=>{
+let video=document.getElementById("camera");
+video.srcObject=stream;
+video.classList.remove("hidden");
 });
-
-function addSurprise(){
-  if(surprise < 100) surprise += 10;
-  document.getElementById("surpriseFill").style.width = surprise + "%";
-  document.getElementById("surpriseText").innerText = "Surprise Meter: " + surprise + "%";
-
-  const msgs = {
-    10:"First smile just for you 😊",
-    20:"A little hug 🤗",
-    30:"A sweet kiss 😘",
-    40:"Late night call vibes 🌙",
-    50:"More love loading 💕",
-    60:"You are my safe place ❤️",
-    70:"Forever feels close 💫",
-    80:"Almost there baby 😝",
-    90:"So much love for you 💖",
-    100:"SURPRISE! I LOVE YOU FOREVER 💍"
-  };
-  document.getElementById("surpriseMsg").innerText = msgs[surprise] || "";
-  for(let i=0;i<5;i++) setTimeout(spawnRandom, i*150);
 }
 
-function toggleLetter(){
-  document.getElementById("letter").classList.toggle("hidden");
+function yesLove(){
+document.getElementById("valentineAns").innerHTML="🐼💋 Panda kisses for you my love!!!";
+for(let i=0;i<35;i++){
+let f=document.createElement("div");
+f.className="flower";
+f.style.left=Math.random()*100+"vw";
+f.innerText="🌸";
+document.body.appendChild(f);
+}
 }
 
-function spawnRandom(){
-  const emojis = ["❤️","🎈","😘","🤗","💋","💖"];
-  const e = document.createElement("div");
-  e.className = "float";
-  e.innerText = emojis[Math.floor(Math.random()*emojis.length)];
-  e.style.left = Math.random()*100 + "vw";
-  document.body.appendChild(e);
-  setTimeout(()=>e.remove(), 4000);
-}
-
-function bigSurprise(){
-  for(let i=0;i<25;i++) setTimeout(spawnRandom, i*120);
+function noLove(){
+document.getElementById("valentineAns").innerHTML="😡🐼 Angry panda is crying!";
 }
 </script>
 
