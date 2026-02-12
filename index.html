@@ -2,107 +2,158 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sonu ❤️ Khushi</title>
-
+<title>For My Love ❤️</title>
 <style>
-body {
+  body {
     margin: 0;
-    padding: 0;
-    font-family: 'Arial', cursive;
+    font-family: 'Arial', sans-serif;
     background: linear-gradient(135deg, #ff9a9e, #fad0c4);
     text-align: center;
-    overflow-x: hidden;
-}
-
-h1 {
-    margin-top: 50px;
-    font-size: 40px;
+    color: #333;
+  }
+  header {
+    padding: 30px;
     color: white;
-    animation: glow 2s infinite alternate;
-}
+    background: #ff4d6d;
+  }
+  h1, h2 { margin: 10px 0; }
+  section { padding: 30px 15px; }
 
-@keyframes glow {
-    from { text-shadow: 0 0 10px white; }
-    to { text-shadow: 0 0 25px red; }
-}
+  .card {
+    background: white;
+    margin: 15px auto;
+    max-width: 900px;
+    padding: 20px;
+    border-radius: 2015px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
 
-.heart {
-    font-size: 60px;
-    animation: beat 1s infinite;
-}
-
-@keyframes beat {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
-}
-
-button {
-    padding: 15px 30px;
-    font-size: 18px;
-    border: none;
-    border-radius: 30px;
-    background-color: white;
-    color: #ff4d6d;
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+  }
+  .gallery img {
+    width: 100%;
+    border-radius: 15px;
     cursor: pointer;
-    margin-top: 30px;
-    transition: 0.3s;
-}
+    transition: transform 0.3s;
+  }
+  .gallery img:hover { transform: scale(1.05); }
 
-button:hover {
-    background-color: #ff4d6d;
+  button {
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    background: #ff4d6d;
     color: white;
-}
+    cursor: pointer;
+    margin: 10px;
+  }
+  button:hover { background: #e63b5a; }
 
-#secret {
-    margin-top: 30px;
-    font-size: 22px;
-    color: white;
-    display: none;
-    animation: fadeIn 2s;
-}
+  .secret { display: none; font-size: 18px; color: #e6004c; margin-top: 15px; }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-footer {
-    margin-top: 80px;
-    color: white;
-    font-size: 18px;
-}
+  .balloon {
+    font-size: 40px;
+    animation: float 4s ease-in-out infinite;
+    display: inline-block;
+    margin: 0 10px;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
 </style>
 </head>
-
 <body>
 
-<h1>Sonu ❤️ Khushi</h1>
+<header>
+  <h1>❤️ Happy Valentine My Love ❤️</h1>
+  <p>This website is only for you 😘</p>
+</header>
 
-<div class="heart">💖</div>
+<!-- Background Music -->
+<audio autoplay loop>
+  <!-- Yahan apna song ka file naam dalo, jaise: love.mp3 -->
+  <source src="love.mp3" type="audio/mpeg">
+</audio>
 
-<p style="color:white; font-size:22px;">
-Happy Valentine's Day My Love 💕<br>
-You are my forever, my always, my everything.
-</p>
+<section class="card">
+  <h2>💌 My Long Message For You</h2>
+  <p>
+    My love, <br><br>
+    Yahan apna **lamba message** likho… jo dil me hai sab likh do.  
+    Tum meri zindagi ho, meri smile ho, meri har khushi ka reason ho...  
+    (Is paragraph ko apne words me change kar dena ❤️)
+  </p>
+</section>
 
-<button onclick="showMessage()">Click for Secret Message 💌</button>
+<section class="card">
+  <h2>📸 Our Memories (10 Photos)</h2>
+  <div class="gallery">
+    <img src="1.jpg">
+    <img src="2.jpg">
+    <img src="3.jpg">
+    <img src="4.jpg">
+    <img src="5.jpg">
+    <img src="6.jpg">
+    <img src="7.jpg">
+    <img src="8.jpg">
+    <img src="9.jpg">
+    <img src="10.jpg">
+  </div>
+  <p>👉 In sab ki jagah apni photos upload kar dena</p>
+</section>
 
-<div id="secret">
-    Sonu, tum meri life ka sabse pyara hissa ho ❤️  
-    Main tumse bohot zyada pyaar karti hoon 😘  
-    Forever Yours — Khushi 💞
-</div>
+<section class="card">
+  <h2>❤️ Why I Love You (5 Reasons)</h2>
+  <ol>
+    <li>Because you always make me smile 😊</li>
+    <li>Because you care for me like no one else 🫶</li>
+    <li>Because you understand me 🥺</li>
+    <li>Because you are my safe place 🏡</li>
+    <li>Because I can’t imagine my life without you 💖</li>
+  </ol>
+</section>
 
-<footer>
-Made with Infinite Love 💘
-</footer>
+<section class="card">
+  <h2>🎈 Our Cute Moments</h2>
+  <p>
+    Remember our first meet, our long talks, our hugs 🤗, our kisses 💋,  
+    our silly fights and cute patch-ups… Every moment with you is special ❤️
+  </p>
+  <div>
+    <span class="balloon">🎈</span>
+    <span class="balloon">❤️</span>
+    <span class="balloon">💋</span>
+    <span class="balloon">🤗</span>
+    <span class="balloon">🎈</span>
+  </div>
+</section>
+
+<section class="card">
+  <h2>🔒 Secret Message</h2>
+  <button onclick="showSecret()">Click to see secret</button>
+  <div class="secret" id="secretMsg">
+    You are mine, forever and always ❤️ I love you more than words can say 😘
+  </div>
+</section>
+
+<section class="card">
+  <h2>🥚 Easter Egg</h2>
+  <p>Hint: Double click anywhere on this page 😏</p>
+</section>
 
 <script>
-function showMessage() {
-    document.getElementById("secret").style.display = "block";
-}
+  function showSecret() {
+    document.getElementById("secretMsg").style.display = "block";
+  }
+
+  document.body.ondblclick = function() {
+    alert("Surprise! You found the Easter Egg 🥳❤️ I love you!");
+  }
 </script>
 
 </body>
