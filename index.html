@@ -1,241 +1,76 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>For My Sonu ❤️</title>
-<style>
-body{
-margin:0;
-font-family:'Segoe UI',sans-serif;
-background:linear-gradient(135deg,#ff758c,#ff7eb3);
-color:white;
-text-align:center;
-overflow-x:hidden;
-}
-.hidden{display:none;}
-section{padding:60px 20px;}
-h1{font-size:36px;cursor:pointer;}
-button{
-padding:12px 25px;
-border:none;
-border-radius:30px;
-background:#ff3e6c;
-color:white;
-font-size:16px;
-cursor:pointer;
-margin:10px;
-}
-input{
-padding:10px;
-border-radius:20px;
-border:none;
-text-align:center;
-}
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:15px;
-max-width:900px;
-margin:auto;
-}
-.gallery img{
-width:100%;
-border-radius:20px;
-cursor:pointer;
-transition:0.3s;
-}
-.gallery img:hover{transform:scale(1.05);}
-.message-box{
-margin-top:15px;
-font-size:18px;
-min-height:30px;
-}
-.popup{
-background:rgba(255,255,255,0.2);
-padding:15px;
-border-radius:20px;
-margin-top:15px;
-}
-.flower{
-position:fixed;
-top:-10px;
-font-size:24px;
-animation:fall 5s linear infinite;
-}
-@keyframes fall{
-to{transform:translateY(110vh);}
-}
-</style>
+<title>Sonu 💖 Khushi</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<!-- PASSWORD -->
-<section id="lock">
-<h1>Enter Our Love Password 💖</h1>
-<input type="password" id="pass" placeholder="Password">
-<br>
-<button onclick="checkPass()">Unlock</button>
-<p id="wrong"></p>
-</section>
-
-<div id="content" class="hidden">
-
-<!-- HERO -->
-<section>
-<h1>Happy Valentine's Day Sonu ❤️</h1>
-<img src="WhatsApp Image 2026-02-12 at 19.29.15.jpeg" width="200" style="border-radius:20px;">
-<div class="popup">
-Mere baby, mere jann, mere shona, meri cutie, meri sweety… ❤️  
-Aap meri life, meri dhadkan, meri saans ho.  
-Sonu + Khushi = Sonushi 💖  
-Aap ho to sab perfect hai.
+<!-- PASSWORD SCREEN -->
+<div id="lockScreen">
+    <h1 class="bigTitle">Enter Love Password 💖</h1>
+    <input type="password" id="password" placeholder="Password dalo baby jann 💕">
+    <button onclick="checkPassword()">Unlock My Heart 💘</button>
 </div>
-</section>
 
-<!-- GALLERY -->
-<section>
-<h1>Touch Our Memories 📸</h1>
-<div class="gallery">
-<img src="WhatsApp Image 2026-02-12 at 19.29.15.jpeg" onclick="showMsg(0)">
-<img src="WhatsApp Image 2026-02-12 at 19.29.17.jpeg" onclick="showMsg(1)">
-<img src="WhatsApp Image 2026-02-12 at 19.29.19.jpeg" onclick="showMsg(2)">
-<img src="WhatsApp Image 2026-02-12 at 19.29.20.jpeg" onclick="showMsg(3)">
-<img src="WhatsApp Image 2026-02-12 at 19.29.21.jpeg" onclick="showMsg(4)">
-<img src="WhatsApp Image 2026-02-12 at 19.29.22.jpeg" onclick="showMsg(5)">
-<img src="WhatsApp Image 2026-02-12 at 19.29.23.jpeg" onclick="showMsg(6)">
-<img src="WhatsApp Image 2026-02-12 at 19.29.24.jpeg" onclick="showMsg(7)">
-<img src="WhatsApp Image 2026-02-12 at 19.29.25.jpeg" onclick="showMsg(8)">
-<img src="WhatsApp Image 2026-02-12 at 19.29.26.jpeg" onclick="showMsg(9)">
-</div>
-<div class="message-box" id="photoMsg"></div>
-</section>
+<!-- MAIN CONTENT -->
+<div id="mainContent" style="display:none;">
 
-<!-- OPEN WHEN -->
-<section>
-<h1>Open When 💌</h1>
-<button onclick="letter('sad')">You’re Sad</button>
-<button onclick="letter('happy')">You’re Happy</button>
-<button onclick="letter('miss')">You Miss Me</button>
-<button onclick="letter('angry')">You’re Angry</button>
-<button onclick="letter('lonely')">You Feel Lonely</button>
-<div id="letterText" class="popup"></div>
-</section>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1 class="valentineText">Happy Valentine's Day<br>Sonu 💖</h1>
+        <img src="images/hero.jpg" class="heroImage">
+    </section>
 
-<!-- WHY I LOVE YOU -->
-<section>
-<h1>Why I Love You 💖</h1>
-<button onclick="reason()">Touch Here</button>
-<div id="reasonBox" class="popup"></div>
-</section>
+    <h2 class="sectionTitle">Our Beautiful Moments 💞</h2>
 
-<!-- FUTURE PLANS -->
-<section>
-<h1 onclick="futureMsg()">Our Future Plans 🌍 (Touch Me)</h1>
-<div id="futureText" class="popup"></div>
-</section>
+    <div class="gallery">
 
-<!-- LOVE BOOTH -->
-<section>
-<h1>Love Booth 📷</h1>
-<button onclick="startCamera()">Open Camera</button>
-<br>
-<video id="camera" autoplay class="hidden" width="250" style="border-radius:20px;"></video>
-</section>
+        <!-- PHOTO CARD (Copy this block and change pic number) -->
+        <div class="card" onclick="flipCard(this)">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="images/pic1.jpg">
+                </div>
+                <div class="card-back">
+                    <p>App meri dhadkan ho 💖</p>
+                </div>
+            </div>
+        </div>
 
-<!-- VALENTINE -->
-<section>
-<h1>Will You Be My Valentine? 💘</h1>
-<button onclick="yesLove()">YES 💖</button>
-<button onclick="noLove()">NO 😒</button>
-<div id="valentineAns" class="popup"></div>
-</section>
+    </div>
+
+    <!-- OPEN WHEN -->
+    <h2 class="sectionTitle">Open When 💌</h2>
+    <div class="letter" onclick="showMessage('happy')">Open When Happy 😊</div>
+    <div class="letter" onclick="showMessage('sad')">Open When Sad 😢</div>
+    <div class="letter" onclick="showMessage('miss')">Open When You Miss Me 💞</div>
+
+    <!-- LOVE BOX -->
+    <h2 class="sectionTitle">Why I Love You 💖</h2>
+    <div class="loveBox">
+        App meri life, meri saans, meri duniya ho 💕 Sonushi forever 💘
+    </div>
+
+    <!-- FUTURE PLANS -->
+    <h2 class="sectionTitle">Our Future Plans 🌍</h2>
+    <div class="loveBox">
+        💍 Shaadi &nbsp; ✈️ Travel &nbsp; 🏡 Ghar &nbsp; 💞 Forever
+    </div>
+
+    <!-- VALENTINE -->
+    <h2 class="sectionTitle">Will You Be My Valentine? 💘</h2>
+    <div class="valentineButtons">
+        <button onclick="sayYes()">YES 💖</button>
+        <button onclick="sayNo()">NO 😡</button>
+    </div>
+
+    <div id="result"></div>
 
 </div>
 
-<script>
-function checkPass(){
-let p=document.getElementById("pass").value;
-if(p==="ilovesonu"){
-document.getElementById("lock").style.display="none";
-document.getElementById("content").classList.remove("hidden");
-}else{
-document.getElementById("wrong").innerText="Wrong password 😢";
-}
-}
-
-const msgs=[
-"My baby looks cutest here 😍",
-"This smile = meri sweety ki jaan 💕",
-"Cutie overload in this pic 🥺",
-"Meri shona angel lag rahi hai 😇",
-"Sonu + Khushi = Sonushi forever 💖",
-"Is moment pe fir se pyaar ho gaya 😘",
-"Sweety you are my world ✨",
-"Meri life isi photo me hai 🌍",
-"Baby you are my happiness ☀️",
-"Forever wali cutie pie 🥰"
-];
-
-function showMsg(i){
-document.getElementById("photoMsg").innerText=msgs[i];
-}
-
-function letter(type){
-let text={
-sad:"Baby please smile… main hamesha aapke saath hoon ❤️",
-happy:"Aapki happiness meri sabse badi jeet hai sweety 🥰",
-miss:"Main bhi aapko har second miss karta hoon jann 💭",
-angry:"Gussa kam karo shona… aap cute lagti ho 😚",
-lonely:"Kabhi lonely feel mat karna, aapki saans me main hoon 💖"
-};
-document.getElementById("letterText").innerText=text[type];
-}
-
-function reason(){
-let arr=[
-"I love your smile",
-"I love your caring heart",
-"I love your cute anger",
-"I love your voice",
-"I love being yours forever"
-];
-document.getElementById("reasonBox").innerText=arr[Math.floor(Math.random()*arr.length)];
-}
-
-function futureMsg(){
-document.getElementById("futureText").innerHTML=
-"• Late night ice cream dates 🍦<br>\
-• Long drives with songs 🚗🎶<br>\
-• Matching outfits and cute selfies 📸<br>\
-• Trips around the world together ✈️🌍<br>\
-• One home, one life, forever together 🏡💞<br>\
-• Growing old holding hands 👵👴";
-}
-
-function startCamera(){
-navigator.mediaDevices.getUserMedia({video:true})
-.then(stream=>{
-let video=document.getElementById("camera");
-video.srcObject=stream;
-video.classList.remove("hidden");
-});
-}
-
-function yesLove(){
-document.getElementById("valentineAns").innerHTML="🐼💋 Panda kisses for you my love!!!";
-for(let i=0;i<35;i++){
-let f=document.createElement("div");
-f.className="flower";
-f.style.left=Math.random()*100+"vw";
-f.innerText="🌸";
-document.body.appendChild(f);
-}
-}
-
-function noLove(){
-document.getElementById("valentineAns").innerHTML="😡🐼 Angry panda is crying!";
-}
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
