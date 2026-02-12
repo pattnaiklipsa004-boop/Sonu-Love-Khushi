@@ -4,91 +4,59 @@
 <meta charset="UTF-8">
 <title>For My Baby ❤️</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <style>
-body {
-  margin: 0;
+body{
+  margin:0;
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(135deg, #ff758c, #ff7eb3);
-  overflow-x: hidden;
-  text-align: center;
-  color: #fff;
+  text-align:center;
+  color:#fff;
+  overflow-x:hidden;
+}
+h1,h2,h3{ text-shadow:0 2px 10px rgba(0,0,0,.3); }
+.section{ padding:40px 20px; }
+button{
+  padding:12px 22px; border:none; border-radius:25px;
+  background:#ff2d55; color:#fff; font-size:16px;
+  cursor:pointer; margin:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,.3);
+}
+button:hover{ transform:scale(1.05); }
+
+#surpriseBar{
+  width:80%; height:20px; background:rgba(255,255,255,.3);
+  margin:20px auto; border-radius:20px; overflow:hidden;
+}
+#surpriseFill{
+  width:0%; height:100%; background:#ff2d55; transition:width .4s;
 }
 
-h1, h2, h3 {
-  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+.gallery img{
+  width:140px; height:140px; object-fit:cover; border-radius:15px;
+  margin:8px; box-shadow:0 5px 15px rgba(0,0,0,.3);
 }
 
-.section {
-  padding: 40px 20px;
+.float{
+  position:fixed; bottom:-40px; font-size:28px;
+  animation: floatUp 4s linear forwards; pointer-events:none;
+}
+@keyframes floatUp{
+  to{ transform:translateY(-110vh); opacity:0; }
 }
 
-button {
-  padding: 12px 22px;
-  border: none;
-  border-radius: 25px;
-  background: #ff2d55;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  margin: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  transition: transform 0.2s;
-}
-button:hover { transform: scale(1.05); }
-
-#surpriseBar {
-  width: 80%;
-  height: 20px;
-  background: rgba(255,255,255,0.3);
-  margin: 20px auto;
-  border-radius: 20px;
-  overflow: hidden;
-}
-#surpriseFill {
-  width: 0%;
-  height: 100%;
-  background: #ff2d55;
-  transition: width 0.5s;
-}
-
-.gallery img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 15px;
-  margin: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-
-.float {
-  position: fixed;
-  font-size: 26px;
-  animation: floatUp 4s linear forwards;
-  pointer-events: none;
-}
-
-@keyframes floatUp {
-  from { transform: translateY(0); opacity: 1; }
-  to { transform: translateY(-300px); opacity: 0; }
-}
-
-.hidden { display: none; }
-
-.love-letter {
-  background: rgba(255,255,255,0.15);
-  padding: 20px;
-  border-radius: 20px;
-  max-width: 800px;
-  margin: 0 auto;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+.hidden{ display:none; }
+.love-letter{
+  background:rgba(255,255,255,.15); padding:20px; border-radius:20px;
+  max-width:800px; margin:0 auto; box-shadow:0 5px 20px rgba(0,0,0,.3);
 }
 </style>
 </head>
 <body>
 
-<!-- 🎵 MUSIC (Exact file name) -->
-<audio id="bgMusic" src="Jis Pe Rakhe Tum Ne Qadam - Sitaare - Ikkis - Arijit Singh.mp3" loop></audio>
+<!-- 🎵 MUSIC -->
+<audio id="bgMusic" loop>
+  <source src="Jis Pe Rakhe Tum Ne Qadam - Sitaare - Ikkis - Arijit Singh.mp3" type="audio/mpeg">
+</audio>
 
 <div class="section">
   <h1>💖 For My Baby & My Life (Sonu) 💖</h1>
@@ -97,16 +65,14 @@ button:hover { transform: scale(1.05); }
   <button onclick="playMusic()">▶️ Play Music</button>
   <button onclick="addSurprise()">🎁 Add Surprise</button>
 
-  <div id="surpriseBar">
-    <div id="surpriseFill"></div>
-  </div>
+  <div id="surpriseBar"><div id="surpriseFill"></div></div>
   <p id="surpriseText">Surprise Meter: 0%</p>
+  <p id="surpriseMsg"></p>
 </div>
 
 <div class="section">
   <h2>📸 Our Cute Moments</h2>
-  <p>Abhi mile nahi, but video calls, baatein, laughs, sab kuch special hai 💕</p>
-
+  <p>Abhi mile nahi, but video calls, baatein, laughs… sab special hai 💕</p>
   <div class="gallery">
     <img src="WhatsApp Image 2026-02-12 at 19.29.15.jpeg">
     <img src="WhatsApp Image 2026-02-12 at 19.29.17.jpeg">
@@ -123,20 +89,14 @@ button:hover { transform: scale(1.05); }
 <div class="section">
   <h2>🔐 Secret Love Letter (Easter Egg)</h2>
   <button onclick="toggleLetter()">Open Secret Message 💌</button>
-
   <div id="letter" class="love-letter hidden">
     <h3>My Baby, My Life, Sonu ❤️</h3>
     <p>
-      I love you baby… bohot bohot bohot zyada ❤️  
-      Will you be mine forever?  
-      Suno na, mujhe aapke saath sab kuch karna hai… sab kuch matlab sab kuch 😉  
-      <br><br>
-      Hum long distance me hain, abhi mile nahi…  
-      Par video calls, late night talks, good morning messages, good night wishes…  
-      In sab ne mujhe aapse aur zyada pyaar karna sikha diya ❤️  
-      <br><br>
-      Aap mere baby ho, meri life ho, mera sab kuch ho.  
-      Sonu, I really really love you 😘  
+      I love you baby… bohot bohot bohot zyada ❤️ Will you be mine forever? <br>
+      Suno na, mujhe aapke saath sab kuch karna hai… sab kuch matlab sab kuch 😉<br><br>
+      Hum long distance me hain, abhi mile nahi… par video calls, late night talks,
+      good morning aur good night messages ne mujhe aapse aur zyada pyaar karna sikha diya ❤️<br><br>
+      Aap mere baby ho, meri life ho, mera sab kuch ho. Sonu, I really really love you 😘
       Hamesha mere saath rehna… hamesha ❤️
     </p>
   </div>
@@ -144,47 +104,65 @@ button:hover { transform: scale(1.05); }
 
 <div class="section">
   <h2>💥 Crazy Surprise Zone</h2>
-  <p>Screen pe click karo, magic hoga 😜</p>
+  <p>Screen pe click/tap karo — hearts, balloons, kisses aayenge 😜</p>
   <button onclick="bigSurprise()">💣 BIG SURPRISE</button>
 </div>
 
 <script>
 let surprise = 0;
+let musicStarted = false;
 
-function playMusic() {
-  const music = document.getElementById("bgMusic");
-  music.play();
+function playMusic(){
+  const m = document.getElementById("bgMusic");
+  m.play().then(()=>{ musicStarted = true; }).catch(()=>{});
 }
 
-function addSurprise() {
-  if (surprise < 100) surprise += 10;
+// First user interaction anywhere → auto start music
+document.addEventListener("click", function(){
+  if(!musicStarted){
+    playMusic();
+  }
+  spawnRandom();
+});
+
+function addSurprise(){
+  if(surprise < 100) surprise += 10;
   document.getElementById("surpriseFill").style.width = surprise + "%";
   document.getElementById("surpriseText").innerText = "Surprise Meter: " + surprise + "%";
-  spawnRandom();
+
+  const msgs = {
+    10:"First smile just for you 😊",
+    20:"A little hug 🤗",
+    30:"A sweet kiss 😘",
+    40:"Late night call vibes 🌙",
+    50:"More love loading 💕",
+    60:"You are my safe place ❤️",
+    70:"Forever feels close 💫",
+    80:"Almost there baby 😝",
+    90:"So much love for you 💖",
+    100:"SURPRISE! I LOVE YOU FOREVER 💍"
+  };
+  document.getElementById("surpriseMsg").innerText = msgs[surprise] || "";
+  for(let i=0;i<5;i++) setTimeout(spawnRandom, i*150);
 }
 
-function toggleLetter() {
+function toggleLetter(){
   document.getElementById("letter").classList.toggle("hidden");
 }
 
-function spawnRandom() {
-  const emojis = ["❤️","💋","🎈","🤗","💕"];
+function spawnRandom(){
+  const emojis = ["❤️","🎈","😘","🤗","💋","💖"];
   const e = document.createElement("div");
   e.className = "float";
   e.innerText = emojis[Math.floor(Math.random()*emojis.length)];
-  e.style.left = Math.random() * 100 + "vw";
-  e.style.bottom = "0px";
+  e.style.left = Math.random()*100 + "vw";
   document.body.appendChild(e);
-  setTimeout(() => e.remove(), 4000);
+  setTimeout(()=>e.remove(), 4000);
 }
 
-function bigSurprise() {
-  for (let i = 0; i < 20; i++) {
-    setTimeout(spawnRandom, i * 150);
-  }
+function bigSurprise(){
+  for(let i=0;i<25;i++) setTimeout(spawnRandom, i*120);
 }
-
-document.addEventListener("click", spawnRandom);
 </script>
 
 </body>
