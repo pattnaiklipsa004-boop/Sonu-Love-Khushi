@@ -1,92 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Happy Valentine's Day 💖</title>
+  <title>For My Sweetuuuu 💖</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- PASSWORD SCREEN -->
 <div id="lockScreen">
-  <h1 class="bigTitle">Enter Love Password 💖</h1>
-  <input type="password" id="password" placeholder="Password dalo baby jann 💕">
+  <h1 class="lockTitle">Enter Our Love Password 💕</h1>
+  <input type="password" id="password" placeholder="Password dalo baby 💖">
   <button onclick="checkPassword()">Unlock My Heart 💘</button>
 </div>
 
-<!-- MAIN WEBSITE -->
 <div id="mainContent">
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <h1 class="valentineText">Happy Valentine's Day Baby 💖</h1>
-    <img src="images/WhatsApp Image 2026-02-12 at 19.29.15.jpeg" class="heroImage bw">
-  </section>
+<section class="hero">
+  <h1 class="mainTitle">Happy Valentine's Day My Sweetuuuu 💖</h1>
+  <img src="images/hero.jpg" id="heroImg">
+</section>
 
-  <h2 class="sectionTitle">Our Beautiful Memories 💞</h2>
+<h2>Our Beautiful Memories 💞</h2>
 
-  <!-- PHOTO GALLERY -->
-  <div class="gallery">
+<div class="gallery">
 
-    <!-- COPY THIS CARD BLOCK AND CHANGE IMAGE + MESSAGE -->
-    <div class="card" onclick="flipCard(this)">
-      <div class="card-inner">
-        <div class="card-front">
-          <img src="images/WhatsApp Image 2026-02-12 at 19.29.17.jpeg">
-        </div>
-        <div class="card-back">
-          <p>You are my sunshine, my peace, my forever home 💖</p>
-        </div>
-      </div>
-    </div>
+<div class="card" onclick="flipCard(this)">
+<div class="inner">
+<div class="front"><img src="images/pic1.jpg"></div>
+<div class="back">You are my peace, my happiness, my forever home 💖</div>
+</div>
+</div>
 
-    <div class="card" onclick="flipCard(this)">
-      <div class="card-inner">
-        <div class="card-front">
-          <img src="images/WhatsApp Image 2026-02-12 at 19.29.19.jpeg">
-        </div>
-        <div class="card-back">
-          <p>Every heartbeat of mine whispers your name baby 💓</p>
-        </div>
-      </div>
-    </div>
+<div class="card" onclick="flipCard(this)">
+<div class="inner">
+<div class="front"><img src="images/pic2.jpg"></div>
+<div class="back">Every heartbeat of mine whispers your name 💓</div>
+</div>
+</div>
 
-    <div class="card" onclick="flipCard(this)">
-      <div class="card-inner">
-        <div class="card-front">
-          <img src="images/WhatsApp Image 2026-02-12 at 19.29.20.jpeg">
-        </div>
-        <div class="card-back">
-          <p>I fall in love with you more and more every single day 💕</p>
-        </div>
-      </div>
-    </div>
+<div class="card" onclick="flipCard(this)">
+<div class="inner">
+<div class="front"><img src="images/pic3.jpg"></div>
+<div class="back">I fall for you more every single day 💕</div>
+</div>
+</div>
 
-  </div>
+</div>
 
-  <!-- OPEN WHEN LETTERS -->
-  <h2 class="sectionTitle">Open When Letters 💌</h2>
-  <div class="letter" onclick="openLetter('happy')">Open When You Are Happy 😊</div>
-  <div class="letter" onclick="openLetter('sad')">Open When You Are Sad 😢</div>
-  <div class="letter" onclick="openLetter('miss')">Open When You Miss Me 💞</div>
+<h2>Open When Letters 💌</h2>
+<button onclick="openLetter()">Open Love Letter 💖</button>
 
-  <!-- FUTURE PLANS -->
-  <h2 class="sectionTitle">Our Future Together 🌍</h2>
-  <div class="loveBox">
-    We will travel the world ✈️, take cute selfies 📸, eat our favorite food 🍕,
-    build our dream home 🏡, and grow old together holding hands 👵👴💖  
-    No matter what happens, I will always choose you, again and again 💞
-  </div>
+<div id="letterModal" class="modal">
+<div class="modalContent">
+<span onclick="closeLetter()" class="close">&times;</span>
+<p id="letterText"></p>
+</div>
+</div>
 
-  <!-- VALENTINE QUESTION -->
-  <h2 class="sectionTitle">Will You Be My Valentine? 💘</h2>
-  <div class="valentineButtons">
-    <button onclick="sayYes()">YES 💖</button>
-    <button onclick="sayNo()">NO 😡</button>
-  </div>
+<h2>Love Photo Booth 📸</h2>
+<button onclick="startCamera()">Start Camera 💖</button>
+<video id="video" autoplay></video>
+<button onclick="takePhoto()">Click Photo 💘</button>
+<canvas id="canvas"></canvas>
 
-  <div id="result"></div>
+<h2>Will You Be Mine Forever? 💍</h2>
+<button onclick="sayYes()">YES 💖</button>
+<button onclick="sayNo()">NO 😡</button>
+
+<div id="result"></div>
 
 </div>
 
