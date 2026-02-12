@@ -1,73 +1,92 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Sonu 💖 Khushi</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Great+Vibes&display=swap" rel="stylesheet">
+  <title>Happy Valentine's Day 💖</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
 <!-- PASSWORD SCREEN -->
 <div id="lockScreen">
-    <h1 class="bigTitle">Enter Love Password 💖</h1>
-    <input type="password" id="password" placeholder="Password dalo baby jann 💕">
-    <button onclick="checkPassword()">Unlock My Heart 💘</button>
+  <h1 class="bigTitle">Enter Love Password 💖</h1>
+  <input type="password" id="password" placeholder="Password dalo baby jann 💕">
+  <button onclick="checkPassword()">Unlock My Heart 💘</button>
 </div>
 
-<!-- MAIN CONTENT -->
-<div id="mainContent" style="display:none;">
+<!-- MAIN WEBSITE -->
+<div id="mainContent">
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <h1 class="valentineText">Happy Valentine's Day<br>Sonu 💖</h1>
-        <img src="images/hero.jpg" class="heroImage">
-    </section>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h1 class="valentineText">Happy Valentine's Day Baby 💖</h1>
+    <img src="images/WhatsApp Image 2026-02-12 at 19.29.15.jpeg" class="heroImage bw">
+  </section>
 
-    <h2 class="sectionTitle">Our Beautiful Moments 💞</h2>
+  <h2 class="sectionTitle">Our Beautiful Memories 💞</h2>
 
-    <div class="gallery">
+  <!-- PHOTO GALLERY -->
+  <div class="gallery">
 
-        <!-- PHOTO CARD (Copy this block and change pic number) -->
-        <div class="card" onclick="flipCard(this)">
-            <div class="card-inner">
-                <div class="card-front">
-                    <img src="images/pic1.jpg">
-                </div>
-                <div class="card-back">
-                    <p>App meri dhadkan ho 💖</p>
-                </div>
-            </div>
+    <!-- COPY THIS CARD BLOCK AND CHANGE IMAGE + MESSAGE -->
+    <div class="card" onclick="flipCard(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="images/WhatsApp Image 2026-02-12 at 19.29.17.jpeg">
         </div>
-
+        <div class="card-back">
+          <p>You are my sunshine, my peace, my forever home 💖</p>
+        </div>
+      </div>
     </div>
 
-    <!-- OPEN WHEN -->
-    <h2 class="sectionTitle">Open When 💌</h2>
-    <div class="letter" onclick="showMessage('happy')">Open When Happy 😊</div>
-    <div class="letter" onclick="showMessage('sad')">Open When Sad 😢</div>
-    <div class="letter" onclick="showMessage('miss')">Open When You Miss Me 💞</div>
-
-    <!-- LOVE BOX -->
-    <h2 class="sectionTitle">Why I Love You 💖</h2>
-    <div class="loveBox">
-        App meri life, meri saans, meri duniya ho 💕 Sonushi forever 💘
+    <div class="card" onclick="flipCard(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="images/WhatsApp Image 2026-02-12 at 19.29.19.jpeg">
+        </div>
+        <div class="card-back">
+          <p>Every heartbeat of mine whispers your name baby 💓</p>
+        </div>
+      </div>
     </div>
 
-    <!-- FUTURE PLANS -->
-    <h2 class="sectionTitle">Our Future Plans 🌍</h2>
-    <div class="loveBox">
-        💍 Shaadi &nbsp; ✈️ Travel &nbsp; 🏡 Ghar &nbsp; 💞 Forever
+    <div class="card" onclick="flipCard(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="images/WhatsApp Image 2026-02-12 at 19.29.20.jpeg">
+        </div>
+        <div class="card-back">
+          <p>I fall in love with you more and more every single day 💕</p>
+        </div>
+      </div>
     </div>
 
-    <!-- VALENTINE -->
-    <h2 class="sectionTitle">Will You Be My Valentine? 💘</h2>
-    <div class="valentineButtons">
-        <button onclick="sayYes()">YES 💖</button>
-        <button onclick="sayNo()">NO 😡</button>
-    </div>
+  </div>
 
-    <div id="result"></div>
+  <!-- OPEN WHEN LETTERS -->
+  <h2 class="sectionTitle">Open When Letters 💌</h2>
+  <div class="letter" onclick="openLetter('happy')">Open When You Are Happy 😊</div>
+  <div class="letter" onclick="openLetter('sad')">Open When You Are Sad 😢</div>
+  <div class="letter" onclick="openLetter('miss')">Open When You Miss Me 💞</div>
+
+  <!-- FUTURE PLANS -->
+  <h2 class="sectionTitle">Our Future Together 🌍</h2>
+  <div class="loveBox">
+    We will travel the world ✈️, take cute selfies 📸, eat our favorite food 🍕,
+    build our dream home 🏡, and grow old together holding hands 👵👴💖  
+    No matter what happens, I will always choose you, again and again 💞
+  </div>
+
+  <!-- VALENTINE QUESTION -->
+  <h2 class="sectionTitle">Will You Be My Valentine? 💘</h2>
+  <div class="valentineButtons">
+    <button onclick="sayYes()">YES 💖</button>
+    <button onclick="sayNo()">NO 😡</button>
+  </div>
+
+  <div id="result"></div>
 
 </div>
 
