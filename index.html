@@ -2,203 +2,189 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>My Love 💖</title>
+<title>For My Baby ❤️</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body {
   margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-  text-align: center;
-  background: linear-gradient(135deg, #ffd6e8, #fff0f5);
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
   overflow-x: hidden;
+  text-align: center;
+  color: #fff;
 }
 
-h1, h2 {
-  color: #ff2f7d;
+h1, h2, h3 {
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
-.container {
-  padding: 20px;
+.section {
+  padding: 40px 20px;
 }
 
-/* Gallery */
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 20px;
+button {
+  padding: 12px 22px;
+  border: none;
+  border-radius: 25px;
+  background: #ff2d55;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: transform 0.2s;
+}
+button:hover { transform: scale(1.05); }
+
+#surpriseBar {
+  width: 80%;
+  height: 20px;
+  background: rgba(255,255,255,0.3);
+  margin: 20px auto;
+  border-radius: 20px;
+  overflow: hidden;
+}
+#surpriseFill {
+  width: 0%;
+  height: 100%;
+  background: #ff2d55;
+  transition: width 0.5s;
 }
 
-.memory-photo {
+.gallery img {
   width: 150px;
   height: 150px;
   object-fit: cover;
   border-radius: 15px;
-  box-shadow: 0 0 10px rgba(255,105,180,0.5);
-  transition: transform 0.3s, box-shadow 0.3s;
+  margin: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-.memory-photo:hover {
-  transform: scale(1.1) rotate(2deg);
-  box-shadow: 0 0 20px rgba(255,20,147,0.8);
+.float {
+  position: fixed;
+  font-size: 26px;
+  animation: floatUp 4s linear forwards;
+  pointer-events: none;
 }
 
-/* Buttons */
-button {
-  background: #ff2f7d;
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 25px;
-  font-size: 16px;
-  cursor: pointer;
-  margin: 20px 0;
-  box-shadow: 0 5px 15px rgba(255,47,125,0.4);
-}
-
-button:hover {
-  background: #ff5fa2;
-}
-
-/* Secret */
-.hidden { display: none; }
-
-.secret {
-  background: #fff;
-  margin: 20px auto;
-  padding: 20px;
-  max-width: 600px;
-  border-radius: 20px;
-  box-shadow: 0 0 20px pink;
-  animation: pop 0.5s ease;
-}
-
-@keyframes pop {
-  from { transform: scale(0.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
-/* Floating emoji animation */
 @keyframes floatUp {
   from { transform: translateY(0); opacity: 1; }
-  to { transform: translateY(-120px); opacity: 0; }
+  to { transform: translateY(-300px); opacity: 0; }
+}
+
+.hidden { display: none; }
+
+.love-letter {
+  background: rgba(255,255,255,0.15);
+  padding: 20px;
+  border-radius: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
 }
 </style>
 </head>
-
 <body>
 
-<div class="container">
-  <h1>💖 My Baby, My Life 💖</h1>
-  <p>For you, my Sonu ❤️</p>
+<!-- 🎵 MUSIC (Exact file name) -->
+<audio id="bgMusic" src="Jis Pe Rakhe Tum Ne Qadam - Sitaare - Ikkis - Arijit Singh.mp3" loop></audio>
 
-  <!-- Music -->
-  <audio id="bgMusic" loop>
-    <source src="Jis_Pe_Rakhe_Tum_Ne_Qadam.mp3" type="audio/mpeg">
-  </audio>
+<div class="section">
+  <h1>💖 For My Baby & My Life (Sonu) 💖</h1>
+  <p>Welcome to our surprise love world 😘</p>
 
-  <p>🎵 Tap anywhere to play music 🎵</p>
+  <button onclick="playMusic()">▶️ Play Music</button>
+  <button onclick="addSurprise()">🎁 Add Surprise</button>
 
-  <!-- Why I Love You -->
-  <h2>❤️ Why I Love You (5 Reasons)</h2>
-  <p>1. Because you always make me smile 😊</p>
-  <p>2. Because you care for me like no one else 🫶</p>
-  <p>3. Because you understand me 🥺</p>
-  <p>4. Because you are my safe place 🤗</p>
-  <p>5. Because I can’t imagine my life without you 💕</p>
+  <div id="surpriseBar">
+    <div id="surpriseFill"></div>
+  </div>
+  <p id="surpriseText">Surprise Meter: 0%</p>
+</div>
 
-  <!-- Our Cute Moments -->
+<div class="section">
   <h2>📸 Our Cute Moments</h2>
-  <p>
-    We haven’t met yet, but still… every video call, every late night talk,  
-    every smile on screen feels magical.  
-    Distance never stopped us from falling more and more in love ❤️  
-    One day, we’ll turn these calls into real hugs and these smiles into forever memories.
-  </p>
+  <p>Abhi mile nahi, but video calls, baatein, laughs, sab kuch special hai 💕</p>
 
-  <!-- Gallery -->
-  <h2>🖼️ Our Memories (10 Photos)</h2>
-  <div id="gallery" class="gallery"></div>
+  <div class="gallery">
+    <img src="WhatsApp Image 2026-02-12 at 19.29.15.jpeg">
+    <img src="WhatsApp Image 2026-02-12 at 19.29.17.jpeg">
+    <img src="WhatsApp Image 2026-02-12 at 19.29.19.jpeg">
+    <img src="WhatsApp Image 2026-02-12 at 19.29.20.jpeg">
+    <img src="WhatsApp Image 2026-02-12 at 19.29.21.jpeg">
+    <img src="WhatsApp Image 2026-02-12 at 19.29.23.jpeg">
+    <img src="WhatsApp Image 2026-02-12 at 19.29.24.jpeg">
+    <img src="WhatsApp Image 2026-02-12 at 19.29.25.jpeg">
+    <img src="WhatsApp Image 2026-02-12 at 19.29.26.jpeg">
+  </div>
+</div>
 
-  <!-- Secret Button -->
-  <button onclick="toggleSecret()">💖 Tap for Secret Message 💖</button>
+<div class="section">
+  <h2>🔐 Secret Love Letter (Easter Egg)</h2>
+  <button onclick="toggleLetter()">Open Secret Message 💌</button>
 
-  <!-- Secret Message -->
-  <div id="secret" class="secret hidden">
-    <h2>💌 For My Baby, My Life (Sonu) 💌</h2>
+  <div id="letter" class="love-letter hidden">
+    <h3>My Baby, My Life, Sonu ❤️</h3>
     <p>
-      My love, my baby, my life ❤️<br><br>
-
-      I love you so so so much… words are never enough.  
-      Will you be mine forever? Forever means forever — har din, har raat, har khushi, har dard. 💕<br><br>
-
-      Hum long distance me hain, phir bhi har video call, har late night talk, har smile mere liye duniya se zyada precious hai.  
-      Sonu, app meri safe place ho, meri aadat ho, meri duniya ho. 💖<br><br>
-
-      Main apko baby bhi bulati hoon, my life bhi, kyunki app dono hi ho 😝  
-      Ek din jab hum milenge na, tab ye sab sirf screen pe nahi, real life me hoga… hugs, kisses, silly fights, aur endless pyaar 😘🤗<br><br>
-
-      I love you baby… main tumhare saath sab kuch karna chahti hoon, sab kuch matlab sab kuch han han wo sab bhi jo app soch rahe ho jo humari kal rat  adhuri reh gayi i mean real main karna hai jann ❤️  
-      Please stay with me, always. Will you be mine forever? 💍
+      I love you baby… bohot bohot bohot zyada ❤️  
+      Will you be mine forever?  
+      Suno na, mujhe aapke saath sab kuch karna hai… sab kuch matlab sab kuch 😉  
+      <br><br>
+      Hum long distance me hain, abhi mile nahi…  
+      Par video calls, late night talks, good morning messages, good night wishes…  
+      In sab ne mujhe aapse aur zyada pyaar karna sikha diya ❤️  
+      <br><br>
+      Aap mere baby ho, meri life ho, mera sab kuch ho.  
+      Sonu, I really really love you 😘  
+      Hamesha mere saath rehna… hamesha ❤️
     </p>
   </div>
+</div>
 
+<div class="section">
+  <h2>💥 Crazy Surprise Zone</h2>
+  <p>Screen pe click karo, magic hoga 😜</p>
+  <button onclick="bigSurprise()">💣 BIG SURPRISE</button>
 </div>
 
 <script>
-// Photos list (yahan apne exact file names rakhna)
-const photos = [
-  "WhatsApp Image 2026-02-12 at 19.29.15.jpeg",
-  "WhatsApp Image 2026-02-12 at 19.29.17.jpeg",
-  "WhatsApp Image 2026-02-12 at 19.29.19.jpeg",
-  "WhatsApp Image 2026-02-12 at 19.29.20.jpeg",
-  "WhatsApp Image 2026-02-12 at 19.29.21.jpeg",
-  "WhatsApp Image 2026-02-12 at 19.29.23.jpeg",
-  "WhatsApp Image 2026-02-12 at 19.29.24.jpeg",
-  "WhatsApp Image 2026-02-12 at 19.29.25.jpeg",
-  "WhatsApp Image 2026-02-12 at 19.29.26.jpeg",
-  "WhatsApp Image 2026-02-12 at 19.29.28.jpeg"
-];
+let surprise = 0;
 
-const gallery = document.getElementById("gallery");
-
-photos.forEach(src => {
-  const img = document.createElement("img");
-  img.src = src;
-  img.className = "memory-photo";
-  gallery.appendChild(img);
-});
-
-// Secret toggle
-function toggleSecret() {
-  document.getElementById("secret").classList.toggle("hidden");
-}
-
-// Play music on first click
-document.body.addEventListener("click", () => {
+function playMusic() {
   const music = document.getElementById("bgMusic");
   music.play();
-}, { once: true });
+}
 
-// Click animation (hearts, kisses, hugs, balloons)
-const emojis = ["💖","💋","🤗","🎈","💕","😘"];
+function addSurprise() {
+  if (surprise < 100) surprise += 10;
+  document.getElementById("surpriseFill").style.width = surprise + "%";
+  document.getElementById("surpriseText").innerText = "Surprise Meter: " + surprise + "%";
+  spawnRandom();
+}
 
-document.addEventListener("click", function(e) {
-  const emoji = document.createElement("div");
-  emoji.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
-  emoji.style.position = "fixed";
-  emoji.style.left = e.clientX + "px";
-  emoji.style.top = e.clientY + "px";
-  emoji.style.fontSize = "24px";
-  emoji.style.pointerEvents = "none";
-  emoji.style.animation = "floatUp 2s ease forwards";
-  document.body.appendChild(emoji);
+function toggleLetter() {
+  document.getElementById("letter").classList.toggle("hidden");
+}
 
-  setTimeout(() => emoji.remove(), 2000);
-});
+function spawnRandom() {
+  const emojis = ["❤️","💋","🎈","🤗","💕"];
+  const e = document.createElement("div");
+  e.className = "float";
+  e.innerText = emojis[Math.floor(Math.random()*emojis.length)];
+  e.style.left = Math.random() * 100 + "vw";
+  e.style.bottom = "0px";
+  document.body.appendChild(e);
+  setTimeout(() => e.remove(), 4000);
+}
+
+function bigSurprise() {
+  for (let i = 0; i < 20; i++) {
+    setTimeout(spawnRandom, i * 150);
+  }
+}
+
+document.addEventListener("click", spawnRandom);
 </script>
 
 </body>
